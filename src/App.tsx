@@ -351,7 +351,6 @@ function App() {
               <div>
                   <h4 className="text-white font-bold text-xs uppercase tracking-widest mb-4">Plataforma</h4>
                   <ul className="space-y-2 text-slate-500 text-xs font-bold uppercase tracking-wide">
-                      <li><a href=# target="_blank" className="hover:text-white transition-colors">Iniciar Web App</a></li>
                       <li><span className="cursor-not-allowed opacity-50">API Developers</span></li>
                   </ul>
               </div>
