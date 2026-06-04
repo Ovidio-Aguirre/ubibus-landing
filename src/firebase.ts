@@ -3,19 +3,19 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
-// Estos datos los obtienes de la configuración de tu proyecto en Firebase Console
+// Los datos de configuración se obtienen de las variables de entorno para mayor seguridad
 const firebaseConfig = {
-  apiKey: "AIzaSyAQEm-YyVD4IR_KSc4_zV4Y7K3vAohf1wo",
-  authDomain: "rutas-sv-e437b.firebaseapp.com",
-  projectId: "rutas-sv-e437b",
-  storageBucket: "rutas-sv-e437b.firebasestorage.app",
-  messagingSenderId: "72417207079",
-  appId: "1:72417207079:web:c29c9a0651b7316aafbf02"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 // Inicializamos Firebase
-
 export const app = initializeApp(firebaseConfig);
+
 // Exportamos las herramientas que usaremos
 export const db = getFirestore(app);
 export const auth = getAuth(app);
