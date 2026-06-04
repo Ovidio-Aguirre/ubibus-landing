@@ -27,12 +27,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSugerencias }) => {
 
         {/* ENLACES DESKTOP */}
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-          <a href="#que-es" className="hover:text-primary-600 transition-colors">¿Qué es?</a>
-          <a href="#funciona" className="hover:text-primary-600 transition-colors">Cómo Funciona</a>
-          <a href="#developers" className="hover:text-primary-600 transition-colors">Desarrolladores</a>
+          <a href="#que-es" className="relative py-1 hover:text-primary-600 transition-colors group">
+            ¿Qué es?
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="#funciona" className="relative py-1 hover:text-primary-600 transition-colors group">
+            Cómo Funciona
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="#developers" className="relative py-1 hover:text-primary-600 transition-colors group">
+            Desarrolladores
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
+          </a>
           <button 
             onClick={onOpenSugerencias} 
-            className="px-5 py-2 rounded-full bg-slate-900 text-white hover:bg-slate-800 transition-colors shadow-md shadow-slate-900/10"
+            className="px-5 py-2 rounded-full bg-slate-900 text-white hover:bg-slate-800 transition-all duration-300 hover:shadow-lg hover:shadow-slate-900/10 hover:-translate-y-0.5 active:translate-y-0 active:shadow-md"
           >
             Sugerencias
           </button>
