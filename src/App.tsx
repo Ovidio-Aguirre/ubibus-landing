@@ -3,7 +3,7 @@ import { ToastProvider } from './context/ToastContext';
 import { Navbar } from './components/layout/Navbar';
 import { Hero } from './components/sections/Hero';
 import { Features } from './components/sections/Features';
-import { Developers } from './components/sections/Developers';
+import { Partners } from './components/sections/Partners';
 import { FeedbackForm } from './components/sections/FeedbackForm';
 import { Footer } from './components/layout/Footer';
 import { Modal } from './components/ui/Modal';
@@ -46,8 +46,8 @@ function AppContent() {
       {/* SECCIÓN DETALLES & CARACTERÍSTICAS */}
       <Features />
 
-      {/* SECCIÓN PARA DESARROLLADORES (API) */}
-      <Developers />
+      {/* SECCIÓN PARA MOTORISTAS Y EMPRESAS */}
+      <Partners />
 
       {/* FORMULARIO DE SUGERENCIAS / FEEDBACK */}
       <FeedbackForm />

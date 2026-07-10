@@ -1,30 +1,32 @@
 import React, { useState } from 'react';
-import { db } from '../../firebase';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { useToast } from '../../context/ToastContext';
+import { useToast } from '../../hooks/useToast';
+import { getRecaptchaToken } from '../../lib/recaptcha';
 
 export const Hero: React.FC = () => {
   const { showToast } = useToast();
   const [email, setEmail] = useState('');
+  const [website, setWebsite] = useState(''); // honeypot anti-bot: los humanos nunca llenan este campo
   const [joined, setJoined] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const MAP_IMAGE = "/mapa-celular.png";
+  const MAP_IMAGE = "/mapa-celular.webp";
 
   const handleJoin = async (e: React.FormEvent) => {
     e.preventDefault();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email || !emailRegex.test(email)) {
+    if (!website && (!email || !emailRegex.test(email))) {
       showToast("Por favor, introduce un correo electrónico válido.", "error");
       return;
     }
     setLoading(true);
     try {
-      await addDoc(collection(db, 'whitelist'), {
-        email: email.toLowerCase().trim(),
-        date: serverTimestamp(),
-        source: 'landing_fixed'
+      const recaptchaToken = await getRecaptchaToken('join');
+      const res = await fetch('/api/join', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email.toLowerCase().trim(), website, recaptchaToken }),
       });
+      if (!res.ok) throw new Error('request failed');
       setJoined(true);
       setEmail('');
       showToast("¡Te has unido con éxito al acceso anticipado!", "success");
@@ -51,18 +53,20 @@ export const Hero: React.FC = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
               </span>
-              Plataforma Activa en San Salvador
+              Beta activa en 7 municipios del Gran San Salvador
             </div>
 
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-display font-medium text-slate-900 leading-[1.05] tracking-tight">
-              Transporte inteligente para una <br className="hidden lg:block" />
-              <span className="text-gradient font-bold">
-                ciudad conectada.
-              </span>
+              Ya no esperes <br className="hidden lg:block" />
+              tu bus <span className="text-gradient font-bold">a ciegas.</span>
             </h1>
 
+            <p className="text-sm font-bold uppercase tracking-widest text-brand-orange">
+              La comunidad nos mueve
+            </p>
+
             <p className="text-base lg:text-lg text-slate-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
-              Optimizamos la movilidad urbana mediante inteligencia colectiva. Visualiza rutas, anticipa llegadas y repórtate en el mapa.
+              Mira en el mapa dónde viene tu bus, cuánto tarda en llegar y si va vacío, normal o lleno. Datos en tiempo real que genera la misma gente que ya viaja en él.
             </p>
 
             {/* FORMULARIO WHITELIST */}
@@ -74,7 +78,21 @@ export const Hero: React.FC = () => {
                 Únete al Acceso Anticipado
               </p>
               <form onSubmit={handleJoin} className="relative group flex flex-col sm:flex-row gap-3">
+                <div className="absolute -left-[9999px] w-px h-px overflow-hidden" aria-hidden="true">
+                  <label htmlFor="hero-website">No llenar este campo</label>
+                  <input
+                    id="hero-website"
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={website}
+                    onChange={(e) => setWebsite(e.target.value)}
+                  />
+                </div>
+                <label htmlFor="hero-email" className="sr-only">Correo electrónico</label>
                 <input
+                  id="hero-email"
                   type="email"
                   placeholder="tu@correo.com"
                   className="w-full flex-1 bg-white/80 backdrop-blur-sm border border-slate-200 rounded-2xl px-5 py-4 outline-none focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 transition-all text-slate-900 shadow-md placeholder:text-slate-400"
@@ -118,6 +136,10 @@ export const Hero: React.FC = () => {
                 <img
                   src={MAP_IMAGE}
                   alt="App Interface"
+                  width={576}
+                  height={1145}
+                  loading="eager"
+                  fetchPriority="high"
                   className="w-full h-full object-cover brightness-[0.96]"
                 />
 

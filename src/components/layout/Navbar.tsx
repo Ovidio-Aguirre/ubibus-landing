@@ -35,8 +35,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSugerencias }) => {
             Cómo Funciona
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
           </a>
-          <a href="#developers" className="relative py-1 hover:text-primary-600 transition-colors group">
-            Desarrolladores
+          <a href="#empresas" className="relative py-1 hover:text-primary-600 transition-colors group">
+            Empresas
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
           </a>
           <button 
@@ -51,7 +51,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSugerencias }) => {
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="md:hidden p-2 rounded-xl hover:bg-slate-100 text-slate-600 transition-colors"
-          aria-label="Toggle menu"
+          aria-label="Abrir menú de navegación"
+          aria-expanded={mobileMenuOpen}
         >
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             {mobileMenuOpen ? (
@@ -80,12 +81,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSugerencias }) => {
           >
             Cómo Funciona
           </a>
-          <a 
-            href="#developers" 
+          <a
+            href="#empresas"
             onClick={() => setMobileMenuOpen(false)}
             className="text-base font-semibold text-slate-600 hover:text-primary-600 py-2 border-b border-slate-50 transition-colors"
           >
-            Desarrolladores
+            Empresas
           </a>
           <button 
             onClick={() => {

@@ -1,29 +1,30 @@
 import React, { useState } from 'react';
-import { db } from '../../firebase';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { useToast } from '../../context/ToastContext';
+import { useToast } from '../../hooks/useToast';
+import { CONTACT_EMAIL } from '../../config';
+import { getRecaptchaToken } from '../../lib/recaptcha';
 
 export const FeedbackForm: React.FC = () => {
   const { showToast } = useToast();
   const [sugMsg, setSugMsg] = useState('');
+  const [website, setWebsite] = useState(''); // honeypot anti-bot: los humanos nunca llenan este campo
   const [sugSent, setSugSent] = useState(false);
   const [loadingSug, setLoadingSug] = useState(false);
 
-  const CONTACT_EMAIL = "om4648654@gmail.com";
-
   const handleSuggest = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!sugMsg.trim()) {
+    if (!website && !sugMsg.trim()) {
       showToast("Por favor, escribe una sugerencia válida.", "error");
       return;
     }
     setLoadingSug(true);
     try {
-      await addDoc(collection(db, 'suggestions'), {
-        message: sugMsg.trim(),
-        date: serverTimestamp(),
-        source: 'landing_feedback'
+      const recaptchaToken = await getRecaptchaToken('suggest');
+      const res = await fetch('/api/suggest', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: sugMsg.trim(), website, recaptchaToken }),
       });
+      if (!res.ok) throw new Error('request failed');
       setSugSent(true);
       setSugMsg('');
       showToast("¡Sugerencia enviada! Muchas gracias por tu valioso aporte.", "success");
@@ -53,9 +54,24 @@ export const FeedbackForm: React.FC = () => {
             </p>
 
             {!sugSent ? (
-              <form onSubmit={handleSuggest} className="max-w-md mx-auto space-y-4">
+              <form onSubmit={handleSuggest} className="relative max-w-md mx-auto space-y-4">
+                <div className="absolute -left-[9999px] w-px h-px overflow-hidden" aria-hidden="true">
+                  <label htmlFor="sug-website">No llenar este campo</label>
+                  <input
+                    id="sug-website"
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={website}
+                    onChange={(e) => setWebsite(e.target.value)}
+                  />
+                </div>
+                <label htmlFor="sugerencia" className="sr-only">Tu sugerencia</label>
                 <textarea
+                  id="sugerencia"
                   rows={4}
+                  maxLength={1000}
                   placeholder="Escribe tu sugerencia aquí..."
                   className="w-full bg-slate-50 border border-slate-200 rounded-2xl p-5 text-slate-900 placeholder:text-slate-400 outline-none focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 transition-all resize-none shadow-inner"
                   value={sugMsg}
