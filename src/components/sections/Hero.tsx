@@ -53,7 +53,7 @@ export const Hero: React.FC = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
               </span>
-              Beta activa en 7 municipios del Gran San Salvador
+              Muy pronto en 7 municipios del Gran San Salvador
             </div>
 
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-display font-medium text-slate-900 leading-[1.05] tracking-tight">

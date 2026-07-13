@@ -88,10 +88,10 @@ export const Features: React.FC = () => {
       {/* --- COBERTURA BETA --- */}
       <section id="cobertura" className="py-24 bg-white relative">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-sm font-bold text-primary-600 uppercase tracking-widest mb-4">Cobertura Actual</h2>
-          <h3 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6 tracking-tight">Ya activo en 7 municipios.</h3>
+          <h2 className="text-sm font-bold text-primary-600 uppercase tracking-widest mb-4">Cobertura de Lanzamiento</h2>
+          <h3 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6 tracking-tight">Llegamos pronto a 7 municipios.</h3>
           <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto mb-10">
-            Estamos en fase beta, creciendo con cada persona que se une. Estos son los municipios donde ya podés ver tu bus en tiempo real:
+            Estamos por lanzar la beta y creceremos con cada persona que se una. Estos son los municipios donde vas a poder ver tu bus en tiempo real:
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {['San Salvador', 'Soyapango', 'Santa Tecla', 'Antiguo Cuscatlán', 'Mejicanos', 'Apopa', 'Ilopango'].map((municipio) => (
