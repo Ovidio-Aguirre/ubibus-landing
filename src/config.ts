@@ -1,1 +1,1 @@
-export const CONTACT_EMAIL = "om4648654@gmail.com";
+export const CONTACT_EMAIL = "info@ubibus.com.sv";
