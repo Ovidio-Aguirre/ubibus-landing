@@ -46,7 +46,7 @@ export const Footer: React.FC<FooterProps> = ({ onShowTerms, onShowPrivacy }) =>
       </div>
 
       <div className="max-w-6xl mx-auto pt-8 mt-16 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-slate-400">
-        <p>© {new Date().getFullYear()} UbiBusSV. Todos los derechos reservados.</p>
+        <p>© {new Date().getFullYear()} Oscar Aguirre. UbiBusSV y todo su contenido. Todos los derechos reservados.</p>
         <div className="flex items-center gap-2">
           <span>Desarrollado por Oscar Aguirre</span>
         </div>
