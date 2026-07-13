@@ -48,11 +48,7 @@ export const Footer: React.FC<FooterProps> = ({ onShowTerms, onShowPrivacy }) =>
       <div className="max-w-6xl mx-auto pt-8 mt-16 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-slate-400">
         <p>© {new Date().getFullYear()} UbiBusSV. Todos los derechos reservados.</p>
         <div className="flex items-center gap-2">
-          <span>Desarrollado con</span>
-          <svg className="w-4 h-4 text-brand-orange" viewBox="0 0 20 20" fill="currentColor">
-            <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
-          </svg>
-          <span>por Oscar Aguirre</span>
+          <span>Desarrollado por Oscar Aguirre</span>
         </div>
       </div>
     </footer>
