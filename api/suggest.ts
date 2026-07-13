@@ -1,6 +1,6 @@
-import type { ApiRequest, ApiResponse } from './_types';
-import { getAdminDb } from './_firebaseAdmin';
-import { verifyRecaptcha } from './_recaptcha';
+import type { ApiRequest, ApiResponse } from './_types.js';
+import { getAdminDb } from './_firebaseAdmin.js';
+import { verifyRecaptcha } from './_recaptcha.js';
 
 export default async function handler(req: ApiRequest, res: ApiResponse) {
   if (req.method !== 'POST') {

@@ -1,4 +1,4 @@
-import type { ApiRequest } from './_types';
+import type { ApiRequest } from './_types.js';
 
 export async function verifyRecaptcha(token: unknown, req: ApiRequest): Promise<boolean> {
   const secret = process.env.RECAPTCHA_SECRET_KEY;
