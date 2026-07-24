@@ -26,21 +26,34 @@ export const Features: React.FC = () => {
             <h3 className="text-4xl md:text-5xl font-display font-bold text-slate-900 tracking-tight">Inteligencia Colectiva.</h3>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Card 1 */}
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-2xl hover:border-primary-100 hover:-translate-y-1.5 hover:scale-[1.02] transition-all duration-300 group">
+              <div className="w-14 h-14 rounded-2xl bg-blue-50 text-primary-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary-600 group-hover:text-white transition-all duration-300">
+                <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                </svg>
+              </div>
+              <h4 className="text-lg font-display font-bold text-slate-900 mb-3">1. Llegar</h4>
+              <p className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors">
+                ¿No sabés qué bus tomar? Escribe a dónde vas y el planificador te dice qué ruta te lleva —directa o con transbordo— y cómo caminar hasta la parada.
+              </p>
+            </div>
+
+            {/* Card 2 */}
             <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-2xl hover:border-primary-100 hover:-translate-y-1.5 hover:scale-[1.02] transition-all duration-300 group">
               <div className="w-14 h-14 rounded-2xl bg-blue-50 text-primary-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary-600 group-hover:text-white transition-all duration-300">
                 <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
-              <h4 className="text-lg font-display font-bold text-slate-900 mb-3">1. Búsqueda y ETA</h4>
+              <h4 className="text-lg font-display font-bold text-slate-900 mb-3">2. Búsqueda y ETA</h4>
               <p className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors">
                 Selecciona tu ruta y el mapa te muestra las unidades activas junto con el tiempo estimado de llegada a tu parada.
               </p>
             </div>
 
-            {/* Card 2 (Highlight) */}
+            {/* Card 3 (Highlight) */}
             <div className="bg-gradient-to-br from-slate-900 to-slate-800 p-8 rounded-3xl shadow-xl hover:shadow-2xl hover:shadow-primary-500/10 hover:-translate-y-1.5 hover:scale-[1.02] transition-all duration-300 relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary-500/20 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
               <div className="relative z-10">
@@ -49,34 +62,34 @@ export const Features: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.906 14.142 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
                   </svg>
                 </div>
-                <h4 className="text-lg font-display font-bold text-white mb-3">2. Abordar</h4>
+                <h4 className="text-lg font-display font-bold text-white mb-3">3. Abordar</h4>
                 <p className="text-sm text-slate-300 leading-relaxed">
                   Al subirte a una unidad, activa <strong className="text-white">"Abordar"</strong>. Tu ubicación se transmite de forma anónima y en tiempo real, ayudando a que otros vean por dónde va el bus y qué tan lleno viene.
                 </p>
               </div>
             </div>
 
-            {/* Card 3 */}
+            {/* Card 4 */}
             <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-2xl hover:border-primary-100 hover:-translate-y-1.5 hover:scale-[1.02] transition-all duration-300 group">
               <div className="w-14 h-14 rounded-2xl bg-blue-50 text-primary-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary-600 group-hover:text-white transition-all duration-300">
                 <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                 </svg>
               </div>
-              <h4 className="text-lg font-display font-bold text-slate-900 mb-3">3. Favoritos y Alertas</h4>
+              <h4 className="text-lg font-display font-bold text-slate-900 mb-3">4. Favoritos y Alertas</h4>
               <p className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors">
                 Marca tus rutas favoritas y recibe un aviso automático cuando tu bus esté a menos de 500 metros de tu parada.
               </p>
             </div>
 
-            {/* Card 4 */}
+            {/* Card 5 */}
             <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-2xl hover:border-brand-orange/20 hover:-translate-y-1.5 hover:scale-[1.02] transition-all duration-300 group">
               <div className="w-14 h-14 rounded-2xl bg-orange-50 text-brand-orange flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-white transition-all duration-300">
                 <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                 </svg>
               </div>
-              <h4 className="text-lg font-display font-bold text-slate-900 mb-3">4. Reportes Comunitarios</h4>
+              <h4 className="text-lg font-display font-bold text-slate-900 mb-3">5. Reportes Comunitarios</h4>
               <p className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors">
                 Reporta tráfico, retenes o unidades llenas. Otros usuarios validan cada reporte con votos para mantener la información confiable.
               </p>
