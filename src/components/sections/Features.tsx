@@ -151,7 +151,7 @@ export const Features: React.FC = () => {
             <FeatureCard
               icon="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z"
               title="Paradas inteligentes"
-              description="El mapa marca en azul las paradas inteligentes del piloto de la Ruta 52 (con pantalla digital y GPS) para distinguirlas de las demás paradas."
+              description="El mapa marca en azul las paradas inteligentes (con pantalla digital y GPS) para distinguirlas de las demás paradas."
             />
           </div>
         </div>

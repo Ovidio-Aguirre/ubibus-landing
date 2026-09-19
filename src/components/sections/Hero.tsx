@@ -9,7 +9,7 @@ export const Hero: React.FC = () => {
   const [joined, setJoined] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const MAP_IMAGE = "/mapa-celular.webp";
+  const MAP_IMAGE = "/mapa-celular-v2.webp";
 
   const handleJoin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -136,8 +136,8 @@ export const Hero: React.FC = () => {
                 <img
                   src={MAP_IMAGE}
                   alt="App Interface"
-                  width={576}
-                  height={1145}
+                  width={720}
+                  height={1600}
                   loading="eager"
                   fetchPriority="high"
                   className="w-full h-full object-cover brightness-[0.96]"
