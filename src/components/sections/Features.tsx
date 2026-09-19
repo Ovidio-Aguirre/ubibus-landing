@@ -94,7 +94,7 @@ export const Features: React.FC = () => {
           <h2 className="text-sm font-bold text-primary-600 uppercase tracking-widest mb-4">Definición del Proyecto</h2>
           <h3 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-8 tracking-tight">¿Qué es UbiBusSV?</h3>
           <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-medium">
-            UbiBusSV es una plataforma web progresiva (PWA) diseñada para resolver la incertidumbre del transporte público en El Salvador. Utiliza tecnología de geolocalización colaborativa (<span className="text-slate-900 font-semibold border-b-2 border-primary-200 px-1">Crowdsourcing</span>) para mostrar la posición de autobuses y microbuses en un mapa digital, permitiendo a los usuarios planificar sus viajes con datos reales.
+            UbiBusSV es una plataforma web progresiva (PWA), con versión Android en prueba cerrada, diseñada para resolver la incertidumbre del transporte público en El Salvador. Utiliza tecnología de geolocalización colaborativa (<span className="text-slate-900 font-semibold border-b-2 border-primary-200 px-1">Crowdsourcing</span>) para mostrar la posición de autobuses y microbuses en un mapa digital, permitiendo a los usuarios planificar sus viajes con datos reales.
           </p>
         </div>
       </section>
@@ -116,7 +116,7 @@ export const Features: React.FC = () => {
               icon="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
               eyebrow={<LivePulse label="Nuevo" light />}
               title="Llegar"
-              description="¿No sabés qué bus tomar? Escribe a dónde vas y el planificador te dice qué ruta te lleva —directa o con transbordo— y cómo caminar hasta la parada."
+              description="¿No sabes qué bus tomar? Escribe a dónde vas y el planificador te dice qué ruta te lleva —directa o con hasta dos transbordos— y cómo caminar hasta la parada."
             />
 
             <HighlightBlock
@@ -129,11 +129,11 @@ export const Features: React.FC = () => {
           </div>
 
           {/* Funciones de apoyo */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
             <FeatureCard
               icon="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
               title="Búsqueda y ETA"
-              description="Selecciona tu ruta y el mapa te muestra las unidades activas junto con el tiempo estimado de llegada a tu parada."
+              description="Selecciona tu ruta y el mapa te muestra las unidades activas, el tiempo estimado de llegada a tu parada y, cuando hay dato registrado, el horario y la tarifa de la ruta."
             />
 
             <FeatureCard
@@ -147,6 +147,12 @@ export const Features: React.FC = () => {
               title="Reportes Comunitarios"
               description="Reporta tráfico, retenes o unidades llenas. Otros usuarios validan cada reporte con votos para mantener la información confiable."
             />
+
+            <FeatureCard
+              icon="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+              title="Paradas inteligentes"
+              description="El mapa marca en azul las paradas inteligentes del piloto de la Ruta 52 (con pantalla digital y GPS) para distinguirlas de las demás paradas."
+            />
           </div>
         </div>
       </section>
@@ -157,7 +163,7 @@ export const Features: React.FC = () => {
           <h2 className="text-sm font-bold text-primary-600 uppercase tracking-widest mb-4">Cobertura de Lanzamiento</h2>
           <h3 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6 tracking-tight">Llegamos pronto a 7 municipios.</h3>
           <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto mb-10">
-            Estamos por lanzar la beta y creceremos con cada persona que se una. Estos son los municipios donde vas a poder ver tu bus en tiempo real:
+            Estamos por lanzar la beta con 173 rutas mapeadas y creceremos con cada persona que se una. Estos son los municipios donde vas a poder ver tu bus en tiempo real:
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {['San Salvador', 'Soyapango', 'Santa Tecla', 'Antiguo Cuscatlán', 'Mejicanos', 'Apopa', 'Ilopango'].map((municipio) => (

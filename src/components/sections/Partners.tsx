@@ -16,7 +16,7 @@ export const Partners: React.FC = () => {
           </div>
           <h3 className="text-4xl md:text-5xl font-display font-bold leading-tight">Una plataforma, <br />tres roles.</h3>
           <p className="text-slate-400 leading-relaxed text-lg max-w-lg">
-            UbiBusSV no es solo un mapa para pasajeros. Los motoristas tienen su propio portal para transmitir su ubicación de forma automática, y las empresas de transporte cuentan con un panel para ver en tiempo real toda su flota, asignar rutas y revisar reportes de sus unidades.
+            UbiBusSV no es solo un mapa para pasajeros. Los motoristas tienen su propio portal para transmitir su ubicación de forma automática, y las empresas de transporte cuentan con un panel para ver en tiempo real su flota, consultar a sus conductores y revisar los reportes de sus unidades.
           </p>
 
           <div className="space-y-5">
@@ -39,7 +39,7 @@ export const Partners: React.FC = () => {
               </div>
               <div>
                 <h4 className="font-display font-bold text-white mb-1">Panel de Empresa</h4>
-                <p className="text-sm text-slate-400 leading-relaxed">Visibilidad de toda tu flota, asignación de rutas y conductores, y reportes filtrados a tus unidades.</p>
+                <p className="text-sm text-slate-400 leading-relaxed">Visibilidad de toda tu flota, lista de tus conductores y reportes filtrados a tus unidades.</p>
               </div>
             </div>
           </div>
