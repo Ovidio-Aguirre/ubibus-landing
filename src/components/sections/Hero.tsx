@@ -9,7 +9,7 @@ export const Hero: React.FC = () => {
   const [joined, setJoined] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const MAP_IMAGE = "/mapa-celular-v2.webp";
+  const MAP_IMAGE = "/mapa-celular-v3.webp";
 
   const handleJoin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -137,18 +137,11 @@ export const Hero: React.FC = () => {
                   src={MAP_IMAGE}
                   alt="App Interface"
                   width={720}
-                  height={1600}
+                  height={1418}
                   loading="eager"
                   fetchPriority="high"
                   className="w-full h-full object-cover brightness-[0.96]"
                 />
-
-                {/* ELEMENTOS FLOTANTES UI MEJORADOS */}
-                <div className="absolute top-10 left-1/2 -translate-x-1/2 glass px-4 py-2 rounded-full border border-white/40 shadow-md flex items-center gap-2 transition-transform hover:scale-105 duration-300">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary-500 animate-pulse"></div>
-                  <span className="text-[10px] font-bold text-slate-700 uppercase tracking-widest">San Salvador, SV</span>
-                </div>
-
               </div>
             </div>
           </div>
