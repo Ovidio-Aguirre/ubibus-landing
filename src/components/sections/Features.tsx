@@ -94,7 +94,7 @@ export const Features: React.FC = () => {
           <h2 className="text-sm font-bold text-primary-600 uppercase tracking-widest mb-4">Definición del Proyecto</h2>
           <h3 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-8 tracking-tight">¿Qué es UbiBusSV?</h3>
           <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-medium">
-            UbiBusSV es una plataforma web progresiva (PWA), con versión Android en prueba cerrada, diseñada para resolver la incertidumbre del transporte público en El Salvador. Utiliza tecnología de geolocalización colaborativa (<span className="text-slate-900 font-semibold border-b-2 border-primary-200 px-1">Crowdsourcing</span>) para mostrar la posición de autobuses y microbuses en un mapa digital, permitiendo a los usuarios planificar sus viajes con datos reales.
+            UbiBusSV es una aplicación de movilidad, con versión Android en prueba cerrada, diseñada para resolver la incertidumbre del transporte público en El Salvador. Utiliza tecnología de geolocalización colaborativa (<span className="text-slate-900 font-semibold border-b-2 border-primary-200 px-1">Crowdsourcing</span>) para mostrar la posición de autobuses y microbuses en un mapa digital, permitiendo a los usuarios planificar sus viajes con datos reales.
           </p>
         </div>
       </section>
@@ -150,8 +150,8 @@ export const Features: React.FC = () => {
 
             <FeatureCard
               icon="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-              title="Paradas inteligentes"
-              description="El mapa marca en azul las paradas inteligentes (con pantalla digital y GPS) para distinguirlas de las demás paradas."
+              title="Paradas inteligentes (Próximamente)"
+              description="El mapa marcará en azul las paradas inteligentes (con pantalla digital y GPS) para distinguirlas de las demás paradas."
             />
           </div>
         </div>
