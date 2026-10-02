@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ubibus.com.sv/sitemap.xml
+Sitemap: https://info.ubibus.com.sv/sitemap.xml
