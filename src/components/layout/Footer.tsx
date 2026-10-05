@@ -1,5 +1,5 @@
 import React from 'react';
-import { CONTACT_EMAIL } from '../../config';
+import { APP_URL, CONTACT_EMAIL } from '../../config';
 
 interface FooterProps {
   onShowTerms: () => void;
@@ -30,7 +30,7 @@ export const Footer: React.FC<FooterProps> = ({ onShowTerms, onShowPrivacy }) =>
         <div>
           <h4 className="text-slate-900 font-bold text-xs uppercase tracking-widest mb-6">Plataforma</h4>
           <ul className="space-y-4 font-medium">
-            <li><span className="cursor-not-allowed opacity-50 flex items-center gap-2">Iniciar Web App <span className="text-[10px] bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full">Pronto</span></span></li>
+            <li><a href={APP_URL} className="hover:text-primary-600 transition-colors">Iniciar Web App</a></li>
             <li><a href="#empresas" className="hover:text-primary-600 transition-colors">Para Empresas y Motoristas</a></li>
           </ul>
         </div>

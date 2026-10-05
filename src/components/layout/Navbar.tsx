@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useScroll } from '../../hooks/useScroll';
+import { APP_URL } from '../../config';
 
 interface NavbarProps {
   onOpenSugerencias: () => void;
@@ -45,6 +46,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSugerencias }) => {
           >
             Sugerencias
           </button>
+          <a
+            href={APP_URL}
+            className="px-5 py-2 rounded-full bg-primary-600 text-white font-semibold hover:bg-primary-700 transition-all duration-300 hover:shadow-lg hover:shadow-primary-600/20 hover:-translate-y-0.5 active:translate-y-0 active:shadow-md"
+          >
+            Probar la app
+          </a>
         </div>
 
         {/* BOTÓN MENÚ MÓVIL */}
@@ -97,6 +104,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSugerencias }) => {
           >
             Sugerencias
           </button>
+          <a
+            href={APP_URL}
+            onClick={() => setMobileMenuOpen(false)}
+            className="w-full bg-primary-600 text-white py-3 rounded-2xl font-bold text-center hover:bg-primary-700 transition-colors shadow-md shadow-primary-600/20"
+          >
+            Probar la app
+          </a>
         </div>
       )}
     </nav>
